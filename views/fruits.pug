@@ -2,3 +2,18 @@ extends layout
 
 block content
   h1= title
+  
+  - let results = [ { name: 'Apple', color: 'Red', price: 1.00 }, { name: 'Banana', color: 'Yellow', price: 0.50 }, { name: 'Orange', color: 'Orange', price: 0.75 } ];
+
+  html
+    head
+      title Fruits
+    body
+      h1 Fruits
+        .container-fluid
+          .row
+          each item in results
+            .col-sm-2
+              div  #{item.name}
+              div  #{item.color}
+              div  #{item.price}
