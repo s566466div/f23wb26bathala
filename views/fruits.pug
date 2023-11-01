@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   
-  - let results = [ { name: 'Apple', color: 'Red', price: 1.00 }, { name: 'Banana', color: 'Yellow', price: 0.50 }, { name: 'Orange', color: 'Orange', price: 0.75 } ];
+  - let results = [ { name: 'strawberry', color: 'Red', price: 1.00 }, { name: 'pineapple', color: 'Yellow', price: 0.50 }, { name: 'Orange', color: 'Orange', price: 0.75 } ];
 
   html
     head
@@ -11,12 +11,11 @@ block content
     body
       h1 Fruits
         div.container-fluid
-          div.row
+        div.row
           each item in results
-            div.col-sm-2
-              div  #{item.name}
-              div  #{item.color}
-              div  #{item.price}
-  ul
-      li
-        a(href="./fruits") Fruits
+            div(class="col-sm-2" onclick =`buy(${index})`) <br> #{item.name}, <br> #{item.color}, <br> #{item.price} <br>
+            script.
+              function buy(a)
+              {
+                  alert(`You purchased Item ${a+1}`)
+              }
