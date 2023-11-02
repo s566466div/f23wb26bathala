@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var fruitsRouter = require('./routes/fruits');
 var boardRouter = require('./routes/board');
 var chooseRouter = require('./routes/choose');
-//var gridbuildRouter = require('./routes/gridbuild');
+
 var app = express();
 
 // view engine setup
